@@ -9,8 +9,8 @@ class EmployeeRepoImpl extends EmployeeRepo {
   EmployeeRepoImpl(this._sqliteService);
 
   @override
-  Future<void> addEmployee(EmployeeDTO employee) async {
-    await _sqliteService.addEmployee(employee);
+  Future<void> addEmployee(String name, String role, int dateOfJoining) async {
+    await _sqliteService.addEmployee(name, role, dateOfJoining);
   }
 
   @override
@@ -31,7 +31,7 @@ class EmployeeRepoImpl extends EmployeeRepo {
   }
 
   @override
-  Future<void> updateEmployee(int employeeId, EmployeeDTO item) async {
-    final res = await _sqliteService.updateEmployee(employeeId, item);
+  Future<void> updateEmployee(int employeeId, Employee item) async {
+    final res = await _sqliteService.updateEmployee(employeeId, item.toData());
   }
 }

@@ -47,6 +47,14 @@ mixin _$HomeState on HomeStateBase, Store {
     return _$getEmployeeListAsyncAction.run(() => super.getEmployeeList());
   }
 
+  final _$addEmployeeAsyncAction = AsyncAction('HomeStateBase.addEmployee');
+
+  @override
+  Future<void> addEmployee(String name, String role, int dateOfJoining) {
+    return _$addEmployeeAsyncAction
+        .run(() => super.addEmployee(name, role, dateOfJoining));
+  }
+
   @override
   String toString() {
     return '''

@@ -38,6 +38,7 @@ dependencies:
   sqflite: ^2.0.2
   path: ^1.8.0
   mobx: any
+  flutter_mobx: any
 
 dev_dependencies:
   mobx_codegen: any
